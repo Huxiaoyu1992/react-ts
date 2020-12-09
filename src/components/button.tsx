@@ -1,4 +1,4 @@
-import React, { useState, Fragment } from 'react'
+import React, { useState, useEffect, Fragment } from 'react'
 
 // const Button: React.FC = () => {
 //   const [state, setstate] = useState({num: 0, on: true})
@@ -14,6 +14,11 @@ import React, { useState, Fragment } from 'react'
 const Button: React.FC = () => {
   const [num, setNum] = useState(0)
   const [status, setStatus] = useState(true)
+  // 这是不需要清除的effect
+  useEffect(() => {
+    // react在渲染后执行的操作：包含了componentDidMount和componentDidupdateß
+    document.title = `点击了${num}次`
+  })
   return (
     <Fragment>
       <button onClick={() => setNum(num + 1)}>{num}</button>
