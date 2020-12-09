@@ -18,7 +18,7 @@ const Button: React.FC = () => {
   useEffect(() => {
     // react在渲染后执行的操作：包含了componentDidMount和componentDidupdateß
     document.title = `点击了${num}次`
-  })
+  }, [num]) // 只有当num改变的时候 useEffect才会执行
   return (
     <Fragment>
       <button onClick={() => setNum(num + 1)}>{num}</button>
