@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 
@@ -7,11 +8,9 @@ const useUrlLoader = (url: string, deps: any[] = []) => {
   useEffect(() => {
     setLoading(true)
     axios.get(url).then(res => {
-      console.log(res.data)
-      setData(res.data)
       setLoading(false)
+      setData(res.data)
     })
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, deps)
 
   return [data, loading]

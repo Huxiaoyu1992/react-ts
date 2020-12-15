@@ -17,7 +17,11 @@ function App() {
   const url = 'https://dog.ceo/api/breeds/image/random'
   const [data, loading] = useUrlLoader(url, [show])
   // 断言
-  const result = data as ISShowResult
+  // !!!!注意这里: 在挂载的时候data没值，需要进行兼容判断
+  const result = data as ISShowResult || {
+    message: '',
+    status: ''
+  }
   return (
     <div className="App">
       <p><button onClick={()=>setShow(!show)}>刷新图片</button></p>
