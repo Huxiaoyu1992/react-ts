@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 
 // 自定义hook必须以use开头
 const useMousePosition = () => {
