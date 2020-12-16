@@ -8,6 +8,8 @@ import useUrlLoader from './hooks/useUrlLoader'
 import MyRef from './components/classRef'
 import TestButton from './components/TestButton'
 import UseRefButton from './components/useRefButton'
+import FuncRefUse from './components/FuncRefUse'
+import Forward from './components/forward'
 
 interface ISShowResult {
   message: string;
@@ -43,6 +45,10 @@ function App() {
       <TestButton />
       {/* 用useRef实现的上面一个testButton不能实现的功能 */}
       <UseRefButton/>
+      {/* 测试useRef */}
+      <FuncRefUse/>
+      {/* forwardRef: 用在组件嵌套子组件 需要穿透组件去获取子组件的ref的时候用 */}
+      <Forward/>
     </div>
   );
 }

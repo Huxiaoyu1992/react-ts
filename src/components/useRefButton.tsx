@@ -14,6 +14,7 @@ const UseRefButton: React.FC = () => {
 
   return (
     <div>
+      {/* 注意: useRef并不会造成render的重新渲染, 这个例子是因为setLike的重新渲染 */}
       <button onClick={() => {setLike(like + 1); likeRef.current++ }}>{like}</button>
       <button onClick={handleClick}>alert!!!</button>
     </div>
