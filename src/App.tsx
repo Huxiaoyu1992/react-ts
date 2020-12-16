@@ -5,6 +5,7 @@ import Button from './components/button'
 import MouseTracker from './components/MouseTracker'
 import useMousePosition from './hooks/useMousePosition'
 import useUrlLoader from './hooks/useUrlLoader'
+import MyRef from './components/classRef'
 
 interface ISShowResult {
   message: string;
@@ -34,6 +35,8 @@ function App() {
       <p>x: {position.x} - y: {position.y}</p>
       {/* 自定义hook : useUrlLoader */}
       {loading ? <p>狗狗图片加载中...</p> : <img src={result.message} alt=""/>}
+      {/* class中使用createRef */}
+      <MyRef />
     </div>
   );
 }
