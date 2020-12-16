@@ -6,6 +6,8 @@ import MouseTracker from './components/MouseTracker'
 import useMousePosition from './hooks/useMousePosition'
 import useUrlLoader from './hooks/useUrlLoader'
 import MyRef from './components/classRef'
+import TestButton from './components/TestButton'
+import UseRefButton from './components/useRefButton'
 
 interface ISShowResult {
   message: string;
@@ -37,6 +39,10 @@ function App() {
       {loading ? <p>狗狗图片加载中...</p> : <img src={result.message} alt=""/>}
       {/* class中使用createRef */}
       <MyRef />
+      {/* 测试：button */}
+      <TestButton />
+      {/* 用useRef实现的上面一个testButton不能实现的功能 */}
+      <UseRefButton/>
     </div>
   );
 }
